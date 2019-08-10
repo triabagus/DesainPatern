@@ -46,4 +46,4 @@ Route::put('/category/update', 'Product\CategoriesController@updateCategory');
 Route::delete('/category/delete/{id}', 'Product\CategoriesController@deleteCategory');
 // Route::post('/cart/add', 'Cart\CartController@addCart');
 
-
+// Route::resource('category', 'Product\CategoriesController'); bisa pake ini namun harus sesuai standar resource in laravel saat membuat controllernya
