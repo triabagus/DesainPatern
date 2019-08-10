@@ -21,7 +21,8 @@
                         </div>
                         <div class="col-md-4 text-left">
 
-                            <form method="post" action="/cart/add">
+                            <form method="post" action="/add-cart/{{ $products->name_product }}">
+                                @method('put')
                                 @csrf 
                                 <h3>{{ $products->name_product }}</h3>
                                 <p>Stock : {{ $products->stock }}</p>
@@ -35,7 +36,7 @@
                                         @if($data_id == $data) {{ $c->name_categories }}@endif 
                                     @endforeach
                                 </p>
-                                <p><button class="btn btn-success">Add to cart</button></p>
+                                <p><button type="submit" class="btn btn-success">Add to cart</button></p>
                             </form>
 
                         </div>

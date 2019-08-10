@@ -81,4 +81,5 @@ class ProductRepository implements MyInterface
     public function deleteImageExpired($attributes){
         File::delete('image-product/'.$attributes);
     }
+
 }

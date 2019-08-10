@@ -30,6 +30,13 @@ Route::patch('/product/update', 'Product\ProductController@updateProducts');
 Route::delete('/product/delete/{id}', 'Product\ProductController@deleteProducts');
 
 /**
+ * Cart Route 
+ */
+Route::get('/cart', 'Cart\CartController@Cart');
+Route::put('/add-cart/{id}', 'Cart\CartController@addToCart');
+Route::patch('update-cart', 'Cart\CartController@updateCart');
+Route::delete('delete-cart', 'Cart\CartController@deleteCart');
+/**
  * Import Route 
  */
 Route::get('/product/export_excel','Product\ProductController@export_excel');
