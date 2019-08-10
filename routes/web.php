@@ -10,7 +10,40 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/home', 'HomeController@index')->name('home');
+});
+
+/**
+ * Product Route
+ */
+Route::get('/data-product', 'Product\ProductController@getAllProducts');
+Route::post('/product/add', 'Product\ProductController@createProducts');
+Route::get('/product/delete/{id}', 'Product\ProductController@deleteProducts');
+Route::get('/product/show/{id}', 'Product\ProductController@getProducts');
+Route::post('/product/update', 'Product\ProductController@updateProducts');
+
+/**
+ * Import Route 
+ */
+Route::get('/product/export_excel','Product\ProductController@export_excel');
+Route::post('/product/import_excel','Product\ProductController@import_excel');
+Route::get('/product/pdf','Product\ProductController@pdf');
+
+/**
+ * Category Route
+ */
+Route::get('/data-category', 'Product\CategoriesController@getAllCategory');
+Route::post('/category/add', 'Product\CategoriesController@createCategory');
+Route::get('/category/show/{id}', 'Product\CategoriesController@getCategory');
+Route::post('/category/update', 'Product\CategoriesController@updateCategory');
+Route::get('/category/delete/{id}', 'Product\CategoriesController@deleteCategory');
+// Route::post('/cart/add', 'Cart\CartController@addCart');
+
+
