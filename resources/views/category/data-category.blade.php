@@ -90,7 +90,11 @@
                 <span class="text-center">Are you sure you want to remove this data <b>{{ $c->name_categories }}</b> ?</span>
             </div>
             <div class="modal-footer">
-            <a href="/category/delete/{{ $c->id }}" class="btn btn-danger">Delete</a>
+            <form action="/category/delete/{{ $c->id }}" method="post">
+                @method('delete')
+                @csrf
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div>
         </div>

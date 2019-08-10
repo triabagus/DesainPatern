@@ -32,6 +32,7 @@
 
                 <div class="card-body">
                     <form action="/category/update" method="post" enctype="multipart/form-data">
+                        @method('put')
                         @csrf
                         <div class="form-group">
                             <label for="name_categories">Name Category</label>

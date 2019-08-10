@@ -25,9 +25,9 @@ Route::group(['middleware'=>'auth'],function(){
  */
 Route::get('/data-product', 'Product\ProductController@getAllProducts');
 Route::post('/product/add', 'Product\ProductController@createProducts');
-Route::get('/product/delete/{id}', 'Product\ProductController@deleteProducts');
 Route::get('/product/show/{id}', 'Product\ProductController@getProducts');
-Route::post('/product/update', 'Product\ProductController@updateProducts');
+Route::patch('/product/update', 'Product\ProductController@updateProducts');
+Route::delete('/product/delete/{id}', 'Product\ProductController@deleteProducts');
 
 /**
  * Import Route 
@@ -42,8 +42,8 @@ Route::get('/product/pdf','Product\ProductController@pdf');
 Route::get('/data-category', 'Product\CategoriesController@getAllCategory');
 Route::post('/category/add', 'Product\CategoriesController@createCategory');
 Route::get('/category/show/{id}', 'Product\CategoriesController@getCategory');
-Route::post('/category/update', 'Product\CategoriesController@updateCategory');
-Route::get('/category/delete/{id}', 'Product\CategoriesController@deleteCategory');
+Route::put('/category/update', 'Product\CategoriesController@updateCategory');
+Route::delete('/category/delete/{id}', 'Product\CategoriesController@deleteCategory');
 // Route::post('/cart/add', 'Cart\CartController@addCart');
 
 

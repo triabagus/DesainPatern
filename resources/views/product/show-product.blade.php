@@ -52,6 +52,7 @@
 
                 <div class="card-body">
                     <form action="/product/update" method="post" enctype="multipart/form-data">
+                        @method('patch')
                         @csrf
                         <div class="form-group">
                             <label for="name_product">Name Product</label>

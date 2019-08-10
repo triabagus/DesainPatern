@@ -139,7 +139,11 @@
                 <span class="text-center">Are you sure you want to remove this data <b>{{ $p->name_product }}</b> ?</span>
             </div>
             <div class="modal-footer">
-            <a href="/product/delete/{{ $p->id }}" class="btn btn-danger">Delete</a>
+            <form action="/product/delete/{{ $p->id }}" method="post">
+                @method('delete')
+                @csrf
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div>
         </div>
