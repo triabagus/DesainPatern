@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
@@ -22,6 +21,8 @@ class ProductsTableSeeder extends Seeder
                 'stock'             => $faker->numberBetween($min = 0, $max = 100) ,
                 'price'             => $faker->numberBetween($min = 10000, $max = 100000) ,
                 'image_product'     => 'default.png',
+                'categories_id'     => factory('App\Models\ProductCategories')->create()->id ,
+                'created_at' => now()
             ]);
         }
 

@@ -37,7 +37,7 @@ class ProductController extends Controller
     {
         $title    = "Data Product";
         $products = $this->product->getAll();
-        $categorisProduct = $this->categorisProduct->getAll();
+        $categorisProduct = $this->categorisProduct->allData();
         return view('product.data-product', ['products' => $products ,'title' => $title,'category' => $categorisProduct])->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -47,7 +47,7 @@ class ProductController extends Controller
             'name_product'  => 'required|max:100',
             'stock'         => 'required|integer',
             'price'         => 'required|integer',
-            'category' => 'required|integer',
+            'category'      => 'required|integer',
             'image_product' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ],[
             'stock.integer' => '* Stock is a number',

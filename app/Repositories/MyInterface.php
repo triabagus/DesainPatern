@@ -47,6 +47,7 @@ interface MyInterface
      */
     function delete(int $id);
     function deleteImageExpired($attributes);
+    function allData();
 }
 
 

@@ -29,8 +29,11 @@
         <server name="MAIL_DRIVER" value="array"/>
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
-        <!-- Tambahkan dua baris di bawah ini untuk pengaturan database -->
+        <!-- Tambahkan baris di bawah ini untuk pengaturan database MYSQL -->
         <env name="DB_CONNECTION" value="mysql"/>
-        <env name="DB_DATABASE" value=":memory:"/>
+        <env name="DB_DATABASE" value="desainpatern"/>
+        <!-- Tambahkan dua baris di bawah ini untuk pengaturan database SQLITE -->
+        <!-- <env name="DB_CONNECTION" value="mysql"/>
+        <env name="DB_DATABASE" value=":memory:"/> -->
     </php>
 </phpunit>

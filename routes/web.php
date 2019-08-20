@@ -17,7 +17,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware'=>'auth'],function(){
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home')->middleware('adminRole');
+    Route::get('/admin', 'HomeController@admin')->name('admin')->middleware('adminRole');
 });
 
 /**
@@ -51,6 +52,6 @@ Route::post('/category/add', 'Product\CategoriesController@createCategory');
 Route::get('/category/show/{id}', 'Product\CategoriesController@getCategory');
 Route::put('/category/update', 'Product\CategoriesController@updateCategory');
 Route::delete('/category/delete/{id}', 'Product\CategoriesController@deleteCategory');
-// Route::post('/cart/add', 'Cart\CartController@addCart');
 
+// Route::post('/cart/add', 'Cart\CartController@addCart');
 // Route::resource('category', 'Product\CategoriesController'); bisa pake ini namun harus sesuai standar resource in laravel saat membuat controllernya

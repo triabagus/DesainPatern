@@ -82,4 +82,7 @@ class ProductRepository implements MyInterface
         File::delete('image-product/'.$attributes);
     }
 
+    public function allData(){
+        
+    }
 }

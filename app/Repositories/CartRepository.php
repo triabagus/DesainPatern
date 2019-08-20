@@ -72,4 +72,7 @@ class CartRepository implements MyInterface
         
     }
 
+    function allData(){
+        
+    }
 }

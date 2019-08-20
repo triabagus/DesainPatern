@@ -72,4 +72,8 @@ class CategoriesRepository implements MyInterface
     function deleteImageExpired($attributes){
         
     }
+
+    function allData(){
+        return $this->model->all();
+    }
 }

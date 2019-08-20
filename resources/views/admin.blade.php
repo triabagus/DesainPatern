@@ -23,16 +23,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
-                    @if (session('error'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('error') }}
-                        </div>
-                    @endif
+
                     You are login
                     
                     @if(auth()->user()->is_admin == 0)
-                    <a href="{{url('/admin')}}">User</a>
+                    <a href="#">User</a>
                     @elseif(auth()->user()->is_admin == 1)
                     <a href="{{url('/admin')}}">Admin</a>
                     @else
