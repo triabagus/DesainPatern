@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +10,26 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    // print_r(app()->make('redis')); // predis in laravel check
+    /**
+     * Make redis keys, example simple
+     */
+    // $redis = app()->make('redis'); // call library radis
+    // $redis->set('key','value'); // make key and value to function set()
+    // return $redis->get('key'); // see key with function get()
+
+    // $app = Illuminate\Support\Facades\Redis::connection();
+    // $app->set('key2','value2');
+    // print_r($app->get('key2')); // Test 2 for redis make
 });
+
+/**
+ * Make redis in controller
+ */
+Route::get('/', 'WelcomeController@index');
+
+Route::get('/article/{id}', 'PostController@showArticle')->where('id','[0-9]+');
 
 Auth::routes();
 
@@ -54,4 +71,8 @@ Route::put('/category/update', 'Product\CategoriesController@updateCategory');
 Route::delete('/category/delete/{id}', 'Product\CategoriesController@deleteCategory');
 
 // Route::post('/cart/add', 'Cart\CartController@addCart');
-// Route::resource('category', 'Product\CategoriesController'); bisa pake ini namun harus sesuai standar resource in laravel saat membuat controllernya
+
+/**
+ * Route Blog
+ */
+Route::resource('blog', 'BlogController'); 

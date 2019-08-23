@@ -7,14 +7,14 @@
  */
 namespace App\Http\Controllers\Product;
 
-use Illuminate\Http\Request;
-use App\Repositories\ProductRepository;
 use App\Repositories\CategoriesRepository;
+use App\Repositories\ProductRepository;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
+use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\csvExportProduct;
 use App\Imports\csvImportProduct;
-use Maatwebsite\Excel\Facades\Excel;
 use PDF;
 
 class ProductController extends Controller
