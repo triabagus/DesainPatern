@@ -73,6 +73,6 @@ Route::delete('/category/delete/{id}', 'Product\CategoriesController@deleteCateg
 // Route::post('/cart/add', 'Cart\CartController@addCart');
 
 /**
- * Route Blog
+ * Blog Route 
  */
 Route::resource('blog', 'BlogController'); 

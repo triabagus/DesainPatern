@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    protected $blog     = null;
+    protected $blog = null;
     /**
      * Repository interface Blog
      * 
@@ -63,9 +63,12 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show($blog)
     {
-        //
+        $blogs = Cache::remember('blogs-'.$blog,60, function()use($blog){
+                    return $this->blog->getById($blog);
+                });
+        return view('blogs.single-blog', compact('blogs'));
     }
 
     /**
